@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="card">
+  <div class="card-header">
+    <%= @friend.first_name%>
+    <%= @friend.last_name%>
+  </div>
+  <div class="card-body">
+    <p class="card-title"> <b>Email</b> <%= @friend.email%>  </p>
+    <p class="card-text"><b>Phone</b> <%=@friend.phone %> </p>
+    <p class="card-text"><b>Twitter</b> <%=@friend.twitter %> </p>
+    <%= link_to "Edit this friend", edit_friend_path(@friend), class:'btn btn-secondary' %>
+    <br></br>
+    <%= button_to "Delete", @friend , method: :delete, data:{turbo_confirm:'Are you sure?'}, class:'btn btn-danger' %> 
+  </div>
+</div>
